@@ -1,4 +1,4 @@
-public abstract class Personagem {
+public abstract class Personagem implements MetodosUP{
    protected String nome;
    protected enum Raca{}
     protected Raca raca;
@@ -57,4 +57,20 @@ public abstract class Personagem {
     }
 
     //metodos da ficha
+
+
+    @Override
+    public void calcularLevel() {
+
+    }
+
+    @Override
+    public void calcularVida() {
+
+    }
+
+    @Override
+    public void maisXP() {
+
+    }
 }
