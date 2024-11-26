@@ -83,4 +83,8 @@ public class Player extends Personagem{
     public void setCarisma(int carisma) {
         Carisma = carisma;
     }
+
+    // To-string
+
+
 }

@@ -56,5 +56,9 @@ public abstract class Personagem {
         Vida = vida;
     }
 
+
+    // To-string
+
+
     //metodos da ficha
 }
