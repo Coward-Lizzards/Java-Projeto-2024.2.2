@@ -16,6 +16,9 @@ public abstract class Personagem implements MetodosUP{
         Vida = vida;
     }
 
+    public Personagem(){}
+
+
     public String getNome() {
         return nome;
     }

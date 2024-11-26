@@ -20,6 +20,7 @@ public class Player extends Personagem{
         Carisma = carisma;
     }
 
+
     public String getPlayer_Nome() {
         return Player_Nome;
     }
