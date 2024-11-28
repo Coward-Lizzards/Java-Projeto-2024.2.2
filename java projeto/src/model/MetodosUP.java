@@ -1,3 +1,5 @@
+package model;
+
 public interface MetodosUP {
     void calcularLevel();
     void calcularVida();

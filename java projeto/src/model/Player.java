@@ -1,3 +1,5 @@
+package model;
+
 public class Player extends Personagem{
     private String Player_Nome;
     private int exp;

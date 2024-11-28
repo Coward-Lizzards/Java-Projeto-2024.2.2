@@ -1,3 +1,5 @@
+package model;
+
 public class Monstro extends Personagem{
     private String tipo; //Pra definir se ele é, por exmeplo, um lobo
     private int XP;
