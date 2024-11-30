@@ -1,14 +1,15 @@
 package model;
 
+import enums.Raca;
+import enums.Level;
+import enums.Classe;
+
 public abstract class Personagem implements MetodosUP {
-   protected String nome;
-   protected enum Raca{}
+    protected String nome;
     protected Raca raca;
-   protected enum Classe{}
     protected Classe classe;
-   protected enum Level{}
     protected Level level;
-   protected int Vida;
+    protected int Vida;
 
     public Personagem(String nome, Raca raca, Classe classe, Level level, int vida) {
         this.nome = nome;
@@ -18,7 +19,8 @@ public abstract class Personagem implements MetodosUP {
         Vida = vida;
     }
 
-    public Personagem(){}
+    public Personagem() {
+    }
 
 
     public String getNome() {
@@ -63,10 +65,12 @@ public abstract class Personagem implements MetodosUP {
 
 
     // To-string
-
+    public void Detalhes() {
+        System.out.println(getNome());
+        System.out.println(getRaca());
+    }
 
     //metodos da ficha
-
 
     @Override
     public void calcularLevel() {
@@ -74,12 +78,12 @@ public abstract class Personagem implements MetodosUP {
     }
 
     @Override
-    public void calcularVida() {
+    public void maisXP(int xpGanho) {
 
     }
 
     @Override
-    public void maisXP() {
+    public void calcularVida() {
 
     }
 }

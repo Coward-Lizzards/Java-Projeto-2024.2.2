@@ -1,4 +1,8 @@
 package model;
+import enums.Raca;
+import enums.Level;
+import enums.Classe;
+
 
 public class Player extends Personagem{
     private String Player_Nome;
@@ -12,14 +16,18 @@ public class Player extends Personagem{
 
     public Player(String nome, Raca raca, Classe classe, Level level, int vida, String player_Nome, int exp, int forca, int destreza, int constituicao, int inteligencia, int sabedoria, int carisma) {
         super(nome, raca, classe, level, vida);
-        Player_Nome = player_Nome;
+        this.Player_Nome = player_Nome;
         this.exp = exp;
-        Forca = forca;
-        Destreza = destreza;
-        Constituicao = constituicao;
-        Inteligencia = inteligencia;
-        Sabedoria = sabedoria;
-        Carisma = carisma;
+        this.Forca = forca;
+        this.Destreza = destreza;
+        this.Constituicao = constituicao;
+        this.Inteligencia = inteligencia;
+        this.Sabedoria = sabedoria;
+        this.Carisma = carisma;
+    }
+
+    public Player() {
+
     }
 
 
@@ -90,4 +98,20 @@ public class Player extends Personagem{
     // To-string
 
 
+    @Override
+    public void calcularLevel() {
+        super.calcularLevel();
+    }
+
+    @Override
+    public void maisXP(int xpGanho) {
+        super.maisXP(xpGanho);
+        setExp(getExp() + xpGanho);
+        calcularLevel();
+    }
+
+    @Override
+    public void calcularVida() {
+        super.calcularVida();
+    }
 }
