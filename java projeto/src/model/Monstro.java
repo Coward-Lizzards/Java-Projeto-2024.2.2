@@ -1,9 +1,8 @@
-package service;
+package model;
 
 import enums.Classe;
 import enums.Raca;
 import enums.Level;
-import model.Personagem;
 
 public class Monstro extends Personagem {
     private String tipo; //Pra definir se ele é, por exmeplo, um lobo
@@ -31,5 +30,9 @@ public class Monstro extends Personagem {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    public void Ataque(){
+
     }
 }

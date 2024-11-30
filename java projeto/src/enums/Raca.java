@@ -1,6 +1,6 @@
 package enums;
 
-public enum Raca {
+public enum  Raca {
     Anao,
     Elfo,
     MeioElfo,

@@ -1,9 +1,9 @@
-package service;
-
 import enums.Classe;
 import enums.Raca;
 import model.Personagem;
 import model.Player;
+import service.PessoaService;
+
 import java.util.Scanner;
 
 public class Main {
@@ -14,6 +14,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         Scanner sc2 = new Scanner(System.in);
         Personagem p = new Player();
+        PessoaService ps = PessoaService();
 
        do {
            System.out.println("Editor Mestre!");
