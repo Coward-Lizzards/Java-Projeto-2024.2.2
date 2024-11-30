@@ -14,7 +14,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         Scanner sc2 = new Scanner(System.in);
         Personagem p = new Player();
-        PessoaService ps = PessoaService();
+        PessoaService ps = new PessoaService();
 
        do {
            System.out.println("Editor Mestre!");

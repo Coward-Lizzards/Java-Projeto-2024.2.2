@@ -7,6 +7,7 @@ import enums.Level;
 public class Monstro extends Personagem {
     private String tipo; //Pra definir se ele é, por exmeplo, um lobo
     private int XP;
+    private int ataque;
     public Monstro(String nome,Raca raca,Classe classe, Level level, int vida, String tipo, int XP){
         super(nome,raca = null, classe = null, level, vida);
         this.tipo = tipo;
@@ -32,7 +33,11 @@ public class Monstro extends Personagem {
         this.tipo = tipo;
     }
 
-    public void Ataque(){
+    public int getAtaque() {
+        return ataque;
+    }
 
+    public void setAtaque(int ataque) {
+        this.ataque = ataque;
     }
 }
