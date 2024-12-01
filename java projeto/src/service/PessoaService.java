@@ -5,6 +5,7 @@ import model.Personagem;
 public class PessoaService {
     private ArrayList<Personagem> personagens = new ArrayList<>();
 
+
     //POST
     public void cadastrarPessoa(Personagem p) {
 
