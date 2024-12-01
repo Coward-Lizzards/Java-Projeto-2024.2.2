@@ -88,8 +88,8 @@ trabalhar com base nisso
         while (continuar) {
             System.out.println("O que deseja fazer?");
             System.out.println("1. Criar personagem");
-            System.out.println("3. Ver personagens");
-            System.out.println("4. Sair");
+            System.out.println("2. Ver personagens");
+            System.out.println("3. Sair");
 
             int escolha = sc.nextInt();
             sc.nextLine(); // Para consumir a quebra de linha após a entrada do número
