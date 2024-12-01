@@ -7,7 +7,7 @@ public class PessoaService {
 
 
     //POST
-    public void cadastrarPessoa(Personagem p) {
+    public void cadastrarPersonagem(Personagem p) {
 
         personagens.add(p);
         System.out.println("cadastrada com sucesso!");

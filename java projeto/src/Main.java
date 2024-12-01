@@ -64,6 +64,7 @@ public class Main {
                    } else if (sc2.nextInt() == 3) {
                        p.setClasse(Classe.Druida);
                    }
+                   ps.cadastrarPersonagem(p);
 
 
 
@@ -178,7 +179,7 @@ trabalhar com base nisso
 
                 case 3:
                     System.out.println("Verificando personagens...");
-                    // Aqui você pode implementar uma lista para armazenar personagens e monstros e depois exibi-los
+                    System.out.println(ps.listar());
                     break;
 
                 case 4:
@@ -223,5 +224,11 @@ trabalhar com base nisso
             default: return Level.INICIANTE;
         }
     }
-}
+
+
+
  */
+
+}
+
+

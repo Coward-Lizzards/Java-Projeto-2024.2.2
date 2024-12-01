@@ -33,6 +33,8 @@ public abstract class Personagem implements MetodosUP {
     public Personagem() {}
 
 
+
+
     public String getNome() {
         return nome;
     }
