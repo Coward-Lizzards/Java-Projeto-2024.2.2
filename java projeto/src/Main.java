@@ -107,7 +107,7 @@ public class Main {
                            p.setClasse(Classe.Mago);
                            break;
                    }
-                   System.out.println("Qual o xp do personagem?");
+                   System.out.println("Qual o Nivel do personagem?");
                    p.setLevel(Level.getLevelPorNumero(sc.nextInt()));
                    System.out.println("Calculando level...");
                    System.out.println("-------------");
