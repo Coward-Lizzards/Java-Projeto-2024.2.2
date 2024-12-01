@@ -63,42 +63,9 @@ public class Main {
                    } else if (sc2.nextInt() == 3) {
                        p.setClasse(Classe.Druida);
                    }
-                   System.out.println("Qual o xp do personagem?");
-                   p.setExp(sc.nextInt());
-                   System.out.println("Calculando level...");
-                   System.out.println("-------------");
-                   p.calcularLevel();
-                   System.out.println("-------------");
-                   System.out.println("Level atualizado");
-
-                   System.out.println("-------------");
-                   System.out.println("Agora vamos adicionar seus atributos");
-                   System.out.println("-------------");
-                   System.out.println("Valor de Força");
-                   ((Player) p).setForca(sc.nextInt());
-                   System.out.println("Valor de Destreza");
-                   ((Player) p).setDestreza(sc.nextInt());
-                   System.out.println("Vaçor de Constituição");
-                   ((Player) p).setConstituicao(sc.nextInt());
-                   System.out.println("Valor de Inteligência");
-                   ((Player) p).setInteligencia(sc.nextInt());
-                   System.out.println("Valor de Sabedoria");
-                   ((Player) p).setSabedoria(sc.nextInt());
-                   System.out.println("Valor de Carisma");
-                   ((Player) p).setCarisma(sc.nextInt());
-
-                   System.out.println("...Estamos calculando o total de pontos de vida...");
-                   p.calcularVida();
-                   System.out.println("Vida atualizada");
-                   System.out.println("Cadastrando personagem");
-                   System.out.println("------------");
-                   ps.cadastrarPersonagem(p);
-                   System.out.println("------------");
-                   System.out.println("Cadastro bem-sucedido");
-
-                   System.out.println("\nPersonagem criado:");
-                   p.Detalhes();
-
+                /*
+                testando um commit
+                 */
 
 
 
@@ -108,7 +75,7 @@ public class Main {
 
 
            }
-           System.out.println("Deseja sair? Digite [4]");
+           System.out.println("Deseja sair? Digite [3]");
            x = sc2.nextInt();
        }while (x != 4);
 
