@@ -20,7 +20,7 @@ public abstract class Personagem implements MetodosUP {
         this.nome = nome;
         this.raca = raca;
         this.classe = classe;
-        this.level = level;
+        this.level = (level != null) ? level : Level.NIVEL_1;
         this.Vida = vida;
         this.exp = exp;
 
@@ -122,9 +122,13 @@ public abstract class Personagem implements MetodosUP {
 
     @Override
     public void calcularVida() {
+        if (this.level == null) {  // Verifica se o level é null
+            this.level = Level.NIVEL_1;  // Se for, inicializa como NIVEL_1
+        }
         int vidaBase = this.classe.getVidaPorNivel(); // Exemplo: Guerreiro tem 10, Mago tem 6
         int modificadorConstituicao = (this.getAtributo(Atributo.CONSTITUICAO) - 10) / 2;
         this.Vida = (vidaBase + modificadorConstituicao) * this.level.getNumero();// Vida total
+        System.out.println("Vida calculada: " + this.Vida);
     }
 
     @Override

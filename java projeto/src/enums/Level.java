@@ -38,6 +38,15 @@ public enum Level {
         return xpMinimo;
     }
 
+    public static Level getLevelPorNumero(int numero) {
+        for (Level level : Level.values()) {
+            if (level.getNumero() == numero) {
+                return level;
+            }
+        }
+        throw new IllegalArgumentException("Nível inválido: " + numero); // Lança exceção se o número for inválido
+    }
+
     // Retorna o nível baseado no XP atual
     public static Level getLevelPorXP(int xpAtual) {
         Level nivelAtual = NIVEL_1;

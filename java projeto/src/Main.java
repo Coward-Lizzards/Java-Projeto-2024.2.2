@@ -1,19 +1,22 @@
 import enums.Classe;
+import enums.Level;
 import enums.Raca;
 import model.Personagem;
 import model.Player;
 import service.PessoaService;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        int x,y,z;
+        int x,y,w,z;
 
         Scanner sc = new Scanner(System.in);
         Scanner sc2 = new Scanner(System.in);
         Personagem p = new Player();
+        Personagem p2 = new Player("Joao","Joao",Raca.Anao,Classe.Druida, Level.NIVEL_1,10,1,15,12,14,10,10,10);
         PessoaService ps = new PessoaService();
 
        do {
@@ -32,18 +35,9 @@ public class Main {
                    System.out.println("Nome do personagem que deseja criar");
                    p.setNome(sc.next());
                    System.out.println("Raça que deseja ser");
-                   System.out.println("1 - Humano,\n2 - Elfo,\n3 - Anão");
-                   if (sc2.nextInt() == 1){
-                       p.setRaca(Raca.Humanos);
-                   } else if (sc2.nextInt() ==2) {
-                       p.setRaca(Raca.Elfo);
-                   } else if (sc2.nextInt() == 3) {
-                       p.setRaca(Raca.Anao);
-                   }
-                   /*
-                    nao gosto da ideia de botar um switch dentro de outro assim tão rapido, mas enfim
-                   int escolha = sc.nextInt();
-                   switch (escolha) {
+                   System.out.println("[1]-Humano,\n[2]-Elfo,\n[3]-Anão,\n[4]-Dragonato,\n[5]-Tiefling,\n[6]-Meio-Elfo,\n[7]-Halfling,\n[8]-Gnomo,\n[9]-Meio-orc");
+                   z = sc2.nextInt();
+                   switch (z) {
                        case 1:
                            p.setRaca(Raca.Humanos);
                            break;
@@ -53,18 +47,68 @@ public class Main {
                        case 3:
                            p.setRaca(Raca.Anao);
                            break;
-                   }*/
+                       case 4:
+                           p.setRaca(Raca.Draconato);
+                           break;
+                       case 5:
+                           p.setRaca(Raca.Tiefling);
+                           break;
+                       case 6:
+                           p.setRaca(Raca.MeioElfo);
+                           break;
+                       case 7:
+                           p.setRaca(Raca.Halfling);
+                           break;
+                       case 8:
+                           p.setRaca(Raca.Gnomo);
+                           break;
+                       case 9:
+                           p.setRaca(Raca.MeioOrc);
+                           break;
+                   }
                    System.out.println("Qual classe deseja?");
-                   System.out.println("1 - Guerreiro,\n2 - Mago,\n3 - Druida");
-                   if (sc2.nextInt() == 1){
-                       p.setClasse(Classe.Guerreiro);
-                   } else if (sc2.nextInt() ==2) {
-                       p.setClasse(Classe.Mago);
-                   } else if (sc2.nextInt() == 3) {
-                       p.setClasse(Classe.Druida);
+                   System.out.println("[1]-Barbaro,\n[2]-Bardo,\n[3]-Clérigo,\n[4]-Druida,\n[5]-Guerreiro,\n[6]-Monje,\n[7]-Paladino,\n[8]-Patrulheiro,\n[9]-Ladino,\n[10]-Feiticeiro,\n[11]-Bruxo,\n[12]-Mago");
+                   w = sc.nextInt();
+                   switch (w) {
+                       case 1:
+                           p.setClasse(Classe.Barbaro);
+                           break;
+                       case 2:
+                           p.setClasse(Classe.Bardo);
+                           break;
+                       case 3:
+                           p.setClasse(Classe.Clerigo);
+                           break;
+                       case 4:
+                           p.setClasse(Classe.Druida);
+                           break;
+                       case 5:
+                           p.setClasse(Classe.Guerreiro);
+                           break;
+                       case 6:
+                           p.setClasse(Classe.Monje);
+                           break;
+                       case 7:
+                           p.setClasse(Classe.Paladino);
+                           break;
+                       case 8:
+                           p.setClasse(Classe.Patrulheiro);
+                           break;
+                       case 9:
+                           p.setClasse(Classe.Ladino);
+                           break;
+                       case 10:
+                           p.setClasse(Classe.Feiticeiro);
+                           break;
+                       case 11:
+                           p.setClasse(Classe.Bruxo);
+                           break;
+                       case 12:
+                           p.setClasse(Classe.Mago);
+                           break;
                    }
                    System.out.println("Qual o xp do personagem?");
-                   p.setExp(sc.nextInt());
+                   p.setLevel(Level.getLevelPorNumero(sc.nextInt()));
                    System.out.println("Calculando level...");
                    System.out.println("-------------");
                    p.calcularLevel();
@@ -74,16 +118,22 @@ public class Main {
                    System.out.println("-------------");
                    System.out.println("Agora vamos adicionar seus atributos");
                    System.out.println("-------------");
+
                    System.out.println("Valor de Força");
                    ((Player) p).setForca(sc.nextInt());
+
                    System.out.println("Valor de Destreza");
                    ((Player) p).setDestreza(sc.nextInt());
+
                    System.out.println("Vaçor de Constituição");
                    ((Player) p).setConstituicao(sc.nextInt());
+
                    System.out.println("Valor de Inteligência");
                    ((Player) p).setInteligencia(sc.nextInt());
+
                    System.out.println("Valor de Sabedoria");
                    ((Player) p).setSabedoria(sc.nextInt());
+
                    System.out.println("Valor de Carisma");
                    ((Player) p).setCarisma(sc.nextInt());
 
@@ -99,145 +149,17 @@ public class Main {
                    System.out.println("\nPersonagem criado:");
                    p.Detalhes();
 
-
-
-
-
-
-
-
-
+                   break;
+               case 2:
+                   System.out.println("Verificando personagens...");
+                   System.out.println(ps.listar());
+                   break;
            }
+           System.out.println("Refazer? Digite [1]");
            System.out.println("Deseja sair? Digite [3]");
            x = sc2.nextInt();
-       }while (x != 4);
+       }while (x != 3);
 
 
     }
 }
-/*
-trabalhar com base nisso
-
-        System.out.println("Editor de Ficha RPG");
-        System.out.println("-----------------");
-        boolean continuar = true;
-
-        while (continuar) {
-            System.out.println("O que deseja fazer?");
-            System.out.println("1. Criar personagem");
-            System.out.println("2. Ver personagens");
-            System.out.println("3. Sair");
-
-            int escolha = sc.nextInt();
-            sc.nextLine(); // Para consumir a quebra de linha após a entrada do número
-
-            switch (escolha) {
-                case 1:
-                    // Criar um jogador
-                    System.out.println("Digite o nome do personagem:");
-                    String nome = sc.nextLine();
-
-                    System.out.println("Escolha a raça (1 - Humano, 2 - Elfo, 3 - Anão, 4 - Orc):");
-                    int escolhaRaca = sc.nextInt();
-                    Raca raca = escolherRaca(escolhaRaca);
-
-                    System.out.println("Escolha a classe (1 - Guerreiro, 2 - Mago, 3 - Ladrao, 4 - Clerigo):");
-                    int escolhaClasse = sc.nextInt();
-                    Classe classe = escolherClasse(escolhaClasse);
-
-                    System.out.println("Escolha o nível (1 - Iniciante, 2 - Intermediário, 3 - Avançado):");
-                    int escolhaNivel = sc.nextInt();
-                    Level level = escolherNivel(escolhaNivel);
-
-                    System.out.println("Digite a quantidade de vida:");
-                    int vida = sc.nextInt();
-
-                    sc.nextLine(); // Consumir o '\n' restante
-
-                    System.out.println("Digite o nome do jogador:");
-                    String playerNome = sc.nextLine();
-
-                    // Atribuindo valores fixos para os atributos
-                    System.out.println("Digite o valor de Força:");
-                    int forca = sc.nextInt();
-
-                    System.out.println("Digite o valor de Destreza:");
-                    int destreza = sc.nextInt();
-
-                    System.out.println("Digite o valor de Constituição:");
-                    int constituicao = sc.nextInt();
-
-                    System.out.println("Digite o valor de Inteligência:");
-                    int inteligencia = sc.nextInt();
-
-                    System.out.println("Digite o valor de Sabedoria:");
-                    int sabedoria = sc.nextInt();
-
-                    System.out.println("Digite o valor de Carisma:");
-                    int carisma = sc.nextInt();
-
-                    // Criando o jogador com base nas entradas
-                    Player player = new Player(nome, raca, classe, level, vida, playerNome, 0, forca, destreza, constituicao, inteligencia, sabedoria, carisma);
-
-                    // Exibindo informações do personagem
-                    System.out.println("\nPersonagem criado:");
-                    System.out.println(player.toString());
-                    ps.cadastrarPersonagem(player);
-
-                    break;
-
-                case 2:
-                    System.out.println("Verificando personagens...");
-                    System.out.println(ps.listar());
-                    break;
-
-                case 3:
-                    System.out.println("Saindo...");
-                    continuar = false;
-                    break;
-
-                default:
-                    System.out.println("Opção inválida, tente novamente.");
-                    break;
-            }
-        }
-
-        sc.close(); // Fechando o scanner ao final
-    }
-
-    private static Raca escolherRaca(int escolha) {
-        switch (escolha) {
-            case 1: return Raca.HUMANO;
-            case 2: return Raca.ELFO;
-            case 3: return Raca.ANAO;
-            case 4: return Raca.ORC;
-            default: return Raca.HUMANO;
-        }
-    }
-
-    private static Classe escolherClasse(int escolha) {
-        switch (escolha) {
-            case 1: return Classe.GUERREIRO;
-            case 2: return Classe.MAGO;
-            case 3: return Classe.LADRAO;
-            case 4: return Classe.CLERIGO;
-            default: return Classe.GUERREIRO;
-        }
-    }
-
-    private static Level escolherNivel(int escolha) {
-        switch (escolha) {
-            case 1: return Level.INICIANTE;
-            case 2: return Level.INTERMEDIARIO;
-            case 3: return Level.AVANCADO;
-            default: return Level.INICIANTE;
-        }
-    }
-
-
-
-
-
-}
-
- */

@@ -2,7 +2,7 @@ package model;
 import enums.Raca;
 import enums.Level;
 import enums.Classe;
-
+import enums.Atributo;
 
 public class Player extends Personagem{
     private String Player_Nome;
@@ -13,15 +13,15 @@ public class Player extends Personagem{
     private int Sabedoria;
     private int Carisma;
 
-    public Player(String nome, Raca raca, Classe classe, Level level, int vida, String player_Nome, int exp, int forca, int destreza, int constituicao, int inteligencia, int sabedoria, int carisma) {
+    public Player(String player_Nome, String nome, Raca raca, Classe classe, Level level, int vida,  int exp, int forca, int destreza, int constituicao, int inteligencia, int sabedoria, int carisma) {
         super(nome, raca, classe, level, vida, exp);
         this.Player_Nome = player_Nome;
-        this.Forca = forca;
-        this.Destreza = destreza;
-        this.Constituicao = constituicao;
-        this.Inteligencia = inteligencia;
-        this.Sabedoria = sabedoria;
-        this.Carisma = carisma;
+        setAtributo(Atributo.FORCA, forca);
+        setAtributo(Atributo.DESTREZA, destreza);
+        setAtributo(Atributo.CONSTITUICAO, constituicao);
+        setAtributo(Atributo.INTELIGENCIA, inteligencia);
+        setAtributo(Atributo.SABEDORIA, sabedoria);
+        setAtributo(Atributo.CARISMA, carisma);
     }
 
     public Player() {
@@ -45,52 +45,28 @@ public class Player extends Personagem{
         this.exp = exp;
     }
 
-    public int getForca() {
-        return Forca;
-    }
-
     public void setForca(int forca) {
-        Forca = forca;
-    }
-
-    public int getDestreza() {
-        return Destreza;
+        setAtributo(Atributo.FORCA, forca);
     }
 
     public void setDestreza(int destreza) {
-        Destreza = destreza;
-    }
-
-    public int getConstituicao() {
-        return Constituicao;
+        setAtributo(Atributo.DESTREZA, destreza);
     }
 
     public void setConstituicao(int constituicao) {
-        Constituicao = constituicao;
-    }
-
-    public int getInteligencia() {
-        return Inteligencia;
+        setAtributo(Atributo.CONSTITUICAO, constituicao);
     }
 
     public void setInteligencia(int inteligencia) {
-        Inteligencia = inteligencia;
-    }
-
-    public int getSabedoria() {
-        return Sabedoria;
+        setAtributo(Atributo.INTELIGENCIA, inteligencia);
     }
 
     public void setSabedoria(int sabedoria) {
-        Sabedoria = sabedoria;
-    }
-
-    public int getCarisma() {
-        return Carisma;
+        setAtributo(Atributo.SABEDORIA, sabedoria);
     }
 
     public void setCarisma(int carisma) {
-        Carisma = carisma;
+        setAtributo(Atributo.CARISMA, carisma);
     }
 
     // To-string
