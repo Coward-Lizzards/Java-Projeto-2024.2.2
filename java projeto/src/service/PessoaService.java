@@ -24,16 +24,14 @@ public class PessoaService {
             }
         }
     }
-    public void atualizar(String nome, String novoNome) {
-        for (Personagem personagem : personagens) {
+    public void atualizar(String nome) {
+        for (int i = 0; i < personagens.size(); i++) {
 
-            if (personagem.getNome().equalsIgnoreCase(nome)) {
-                personagem.setNome(novoNome);
-                System.out.println("Atualizado com sucesso!");
-
-            } else {
-                System.out.println("Pessoa não foi encontrada.");
-
+            if (personagens.get(i).getNome().equalsIgnoreCase(nome)) {
+                personagens.remove(i);
+                System.out.println("Localizado!");
+            } else{
+                System.out.println("Não encontrado");
             }
         }
     }
