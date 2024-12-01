@@ -147,6 +147,7 @@ trabalhar com base nisso
                     // Exibindo informações do personagem
                     System.out.println("\nPersonagem criado:");
                     System.out.println(player.toString());
+                    ps.cadastrarPersonagem(player);
 
                     break;
 
@@ -174,6 +175,7 @@ trabalhar com base nisso
                     // Exibindo informações do monstro
                     System.out.println("\nMonstro criado:");
                     System.out.println(monstro.toString());
+                    ps.cadastrarPersonagem(monstro);
 
                     break;
 
@@ -227,8 +229,8 @@ trabalhar com base nisso
 
 
 
- */
+
 
 }
 
-
+ */
