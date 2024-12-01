@@ -12,17 +12,17 @@ public abstract class Personagem implements MetodosUP {
     protected Raca raca;
     protected Classe classe;
     protected Level level;
-    private int exp;
+    protected int exp;
     protected int Vida;
     protected EnumMap<Atributo, Integer> atributos = new EnumMap<>(Atributo.class);
 
-    public Personagem(String nome, Raca raca, Classe classe, Level level, int vida) {
+    public Personagem(String nome, Raca raca, Classe classe, Level level, int vida, int exp) {
         this.nome = nome;
         this.raca = raca;
         this.classe = classe;
         this.level = level;
-        Vida = vida;
-
+        this.Vida = vida;
+        this.exp = exp;
 
         //setar atributos base começando de 10
         for (Atributo atributo : Atributo.values()) {

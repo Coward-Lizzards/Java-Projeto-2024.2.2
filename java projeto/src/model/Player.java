@@ -14,9 +14,8 @@ public class Player extends Personagem{
     private int Carisma;
 
     public Player(String nome, Raca raca, Classe classe, Level level, int vida, String player_Nome, int exp, int forca, int destreza, int constituicao, int inteligencia, int sabedoria, int carisma) {
-        super(nome, raca, classe, level, vida);
+        super(nome, raca, classe, level, vida, exp);
         this.Player_Nome = player_Nome;
-        this.exp = exp;
         this.Forca = forca;
         this.Destreza = destreza;
         this.Constituicao = constituicao;
@@ -95,22 +94,4 @@ public class Player extends Personagem{
     }
 
     // To-string
-
-
-    @Override
-    public void calcularLevel() {
-        super.calcularLevel();
-    }
-
-    @Override
-    public void maisXP(int xpGanho) {
-        super.maisXP(xpGanho);
-        setExp(getExp() + xpGanho);
-        calcularLevel();
-    }
-
-    @Override
-    public void calcularVida() {
-        super.calcularVida();
-    }
 }

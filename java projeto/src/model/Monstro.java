@@ -9,7 +9,7 @@ public class Monstro extends Personagem {
     private int XP;
     private int ataque;
     public Monstro(String nome,Raca raca,Classe classe, Level level, int vida, String tipo, int XP){
-        super(nome,raca = null, classe = null, level, vida);
+        super(nome,raca = null, classe = null, level, vida, XP);
         this.tipo = tipo;
         this.XP = XP;
     }
