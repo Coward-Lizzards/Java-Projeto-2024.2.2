@@ -22,9 +22,8 @@ public class Main {
            System.out.println("O que deseja fazer?");
 
            System.out.println("\n1. Criar personagem");
-           System.out.println("2. Criar monstro");
-           System.out.println("3. Ver personagens");
-           System.out.println("4. Sair");
+           System.out.println("2. Ver personagens");
+           System.out.println("3. Sair");
            y = sc2.nextInt();
            switch (y) {
                case 1:
@@ -89,9 +88,8 @@ trabalhar com base nisso
         while (continuar) {
             System.out.println("O que deseja fazer?");
             System.out.println("1. Criar personagem");
-            System.out.println("2. Criar monstro");
-            System.out.println("3. Ver personagens");
-            System.out.println("4. Sair");
+            System.out.println("2. Ver personagens");
+            System.out.println("3. Sair");
 
             int escolha = sc.nextInt();
             sc.nextLine(); // Para consumir a quebra de linha após a entrada do número
@@ -152,39 +150,11 @@ trabalhar com base nisso
                     break;
 
                 case 2:
-                    // Criar um monstro
-                    System.out.println("Digite o nome do monstro:");
-                    String nomeMonstro = sc.nextLine();
-
-                    System.out.println("Escolha o tipo de monstro (ex: Lobo, Dragão):");
-                    String tipoMonstro = sc.nextLine();
-
-                    System.out.println("Escolha o nível (1 - Iniciante, 2 - Intermediário, 3 - Avançado):");
-                    int nivelMonstro = sc.nextInt();
-                    Level levelMonstro = escolherNivel(nivelMonstro);
-
-                    System.out.println("Digite a quantidade de vida:");
-                    int vidaMonstro = sc.nextInt();
-
-                    System.out.println("Digite o valor de XP do monstro:");
-                    int xpMonstro = sc.nextInt();
-
-                    // Criando o monstro
-                    Monstro monstro = new Monstro(nomeMonstro, tipoMonstro, levelMonstro, vidaMonstro, xpMonstro);
-
-                    // Exibindo informações do monstro
-                    System.out.println("\nMonstro criado:");
-                    System.out.println(monstro.toString());
-                    ps.cadastrarPersonagem(monstro);
-
-                    break;
-
-                case 3:
                     System.out.println("Verificando personagens...");
                     System.out.println(ps.listar());
                     break;
 
-                case 4:
+                case 3:
                     System.out.println("Saindo...");
                     continuar = false;
                     break;
