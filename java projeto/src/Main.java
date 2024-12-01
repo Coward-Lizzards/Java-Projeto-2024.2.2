@@ -18,6 +18,7 @@ public class Main {
         Personagem p = new Player();
         Personagem p2 = new Player("Joao","Celebrinbor",Raca.Anao,Classe.Druida, Level.NIVEL_1,10,1,15,12,14,10,10,10);
         PessoaService ps = new PessoaService();
+        ps.cadastrarPersonagem(p2);
 
        do {
            System.out.println("Editor Mestre!");
@@ -26,7 +27,9 @@ public class Main {
 
            System.out.println("\n1. Criar personagem");
            System.out.println("2. Ver personagens");
-           System.out.println("3. Sair");
+           System.out.println("3. Atualizar personagens");
+           System.out.println("4. Deletar personagens");
+           System.out.println("5. Sair");
            y = sc2.nextInt();
            switch (y) {
                case 1:
@@ -153,11 +156,21 @@ public class Main {
                    System.out.println("Verificando personagens...");
                    ps.listar();
                    break;
+               case 3:
+                   System.out.println("Digite o nome da pessoa que deseja atualizar: ");
+                   String nome = sc.next();
+                   System.out.print("Digite o novo nome do personagem: ");
+                   String novoNome = sc.next();
+                   ps.atualizar(nome, novoNome);
+               case 4:
+                   System.out.print("Digite o nome da pessoa que deseja deletar: ");
+                   String nomeDeletar = sc.next();
+                   ps.deletar(nomeDeletar);
            }
            System.out.println("Refazer? Digite [1]");
-           System.out.println("Deseja sair? Digite [3]");
+           System.out.println("Deseja sair? Digite [5]");
            x = sc2.nextInt();
-       }while (x != 3);
+       }while (x != 5);
 
 
     }
