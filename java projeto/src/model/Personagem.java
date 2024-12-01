@@ -1,15 +1,20 @@
 package model;
 
+import enums.Atributo;
 import enums.Raca;
 import enums.Level;
 import enums.Classe;
+import java.util.EnumMap;
+
 
 public abstract class Personagem implements MetodosUP {
     protected String nome;
     protected Raca raca;
     protected Classe classe;
     protected Level level;
+    private int exp;
     protected int Vida;
+    protected EnumMap<Atributo, Integer> atributos = new EnumMap<>(Atributo.class);
 
     public Personagem(String nome, Raca raca, Classe classe, Level level, int vida) {
         this.nome = nome;
@@ -17,10 +22,15 @@ public abstract class Personagem implements MetodosUP {
         this.classe = classe;
         this.level = level;
         Vida = vida;
+
+
+        //setar atributos base começando de 10
+        for (Atributo atributo : Atributo.values()) {
+            this.atributos.put(atributo, 10);
+        }
     }
 
-    public Personagem() {
-    }
+    public Personagem() {}
 
 
     public String getNome() {
@@ -63,27 +73,66 @@ public abstract class Personagem implements MetodosUP {
         Vida = vida;
     }
 
+    public int getExp() {return exp;}
 
-    // To-string
+    public void setExp(int exp) {this.exp = exp;}
+
+    // metodos para acessar e modificar os atributos
+    @Override
+    public int getAtributo(Atributo atributo) {
+        return atributos.getOrDefault(atributo, 0);
+    }
+
+    @Override
+    public void setAtributo(Atributo atributo, int valor) {
+        atributos.put(atributo, valor);
+    }
+
+    @Override
+    public void incrementarAtributo(Atributo atributo, int incremento) {
+        atributos.put(atributo, atributos.getOrDefault(atributo, 0) + incremento);
+    }
+
+
+    // Exibe os detalhes do personagem
+    @Override
     public void Detalhes() {
-        System.out.println(getNome());
-        System.out.println(getRaca());
+        System.out.println("Nome: " + getNome());
+        System.out.println("Raça: " + getRaca());
+        System.out.println("Classe: " + getClasse());
+        System.out.println("Level: " + getLevel());
+        System.out.println("Vida: " + getVida());
+        System.out.println("Atributos:");
+        for (Atributo atributo : Atributo.values()) {
+            System.out.println(atributo + ": " + getAtributo(atributo));
+        }
     }
 
     //metodos da ficha
 
+
+    // Métodos abstratos ou a serem implementados
     @Override
     public void calcularLevel() {
-
-    }
-
-    @Override
-    public void maisXP(int xpGanho) {
-
+        // Lógica para calcular o level
+        System.out.println("Calculando level...");
     }
 
     @Override
     public void calcularVida() {
-
+        int vidaBase = this.classe.getVidaPorNivel(); // Exemplo: Guerreiro tem 10, Mago tem 6
+        int modificadorConstituicao = (this.getAtributo(Atributo.CONSTITUICAO) - 10) / 2;
+        this.Vida = (vidaBase + modificadorConstituicao) * this.level.getNumero();// Vida total
     }
+
+    @Override
+    public void maisXP(int xpGanho) {
+        this.exp += xpGanho; // Adiciona XP ao total
+        Level novoNivel = Level.getLevelPorXP(this.exp);
+        if (!novoNivel.equals(this.level)) {
+            this.level = novoNivel;
+            calcularLevel(); // Atualiza o nível se houver mudança
+        }
+    }
+
 }

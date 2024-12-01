@@ -6,7 +6,6 @@ import enums.Classe;
 
 public class Player extends Personagem{
     private String Player_Nome;
-    private int exp;
     private int Forca;
     private int Destreza;
     private int Constituicao;
