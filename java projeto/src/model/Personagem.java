@@ -141,4 +141,18 @@ public abstract class Personagem implements MetodosUP {
         }
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Nome: ").append(getNome()).append("\n");
+        sb.append("Raça: ").append(getRaca()).append("\n");
+        sb.append("Classe: ").append(getClasse()).append("\n");
+        sb.append("Level: ").append(getLevel()).append("\n");
+        sb.append("Vida: ").append(getVida()).append("\n");
+        sb.append("Atributos:\n");
+        for (Atributo atributo : Atributo.values()) {
+            sb.append(atributo).append(": ").append(getAtributo(atributo)).append("\n");
+        }
+        return sb.toString();
+    }
 }

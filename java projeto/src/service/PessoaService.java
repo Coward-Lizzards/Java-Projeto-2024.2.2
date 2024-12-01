@@ -15,12 +15,15 @@ public class PessoaService {
     }
 
     //GET
-    public ArrayList<Personagem> listar() {
-
-        return personagens;
-
+    public void listar() {
+        if (personagens.isEmpty()) {
+            System.out.println("Nenhum personagem cadastrado.");
+        } else {
+            for (Personagem p : personagens) {
+                System.out.println(p);
+            }
+        }
     }
-
     public void atualizar(String nome, String novoNome) {
         for (Personagem personagem : personagens) {
 

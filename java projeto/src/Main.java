@@ -16,7 +16,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         Scanner sc2 = new Scanner(System.in);
         Personagem p = new Player();
-        Personagem p2 = new Player("Joao","Joao",Raca.Anao,Classe.Druida, Level.NIVEL_1,10,1,15,12,14,10,10,10);
+        Personagem p2 = new Player("Joao","Celebrinbor",Raca.Anao,Classe.Druida, Level.NIVEL_1,10,1,15,12,14,10,10,10);
         PessoaService ps = new PessoaService();
 
        do {
@@ -145,14 +145,13 @@ public class Main {
                    ps.cadastrarPersonagem(p);
                    System.out.println("------------");
                    System.out.println("Cadastro bem-sucedido");
-
                    System.out.println("\nPersonagem criado:");
                    p.Detalhes();
 
                    break;
                case 2:
                    System.out.println("Verificando personagens...");
-                   System.out.println(ps.listar());
+                   ps.listar();
                    break;
            }
            System.out.println("Refazer? Digite [1]");
