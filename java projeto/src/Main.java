@@ -4,8 +4,6 @@ import enums.Raca;
 import model.Personagem;
 import model.Player;
 import service.PessoaService;
-
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {

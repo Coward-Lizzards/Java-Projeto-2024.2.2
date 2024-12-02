@@ -110,6 +110,27 @@ public abstract class Personagem implements MetodosUP {
         }
     }
 
+
+    // Outros atributos e métodos...
+
+    public void atualizar(String novoNome, Raca novaRaca, Classe novaClasse, Level novoLevel,
+                          int novaForca, int novaDestreza, int novaConstituicao,
+                          int novaInteligencia, int novaSabedoria, int novoCarisma) {
+        if (novoNome != null) this.nome = novoNome;
+        if (novaRaca != null) this.raca = novaRaca;
+        if (novaClasse != null) this.classe = novaClasse;
+        if (novoLevel != null) this.level = novoLevel;
+
+        this.forca = novaForca > 0 ? novaForca : this.forca;
+        this.destreza = novaDestreza > 0 ? novaDestreza : this.destreza;
+        this.constituicao = novaConstituicao > 0 ? novaConstituicao : this.constituicao;
+        this.inteligencia = novaInteligencia > 0 ? novaInteligencia : this.inteligencia;
+        this.sabedoria = novaSabedoria > 0 ? novaSabedoria : this.sabedoria;
+        this.carisma = novoCarisma > 0 ? novoCarisma : this.carisma;
+
+        calcularVida(); // Recalcular vida se necessário.
+        calcularLevel(); // Recalcular level se necessário.
+
     //metodos da ficha
 
 

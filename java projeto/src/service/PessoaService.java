@@ -1,6 +1,11 @@
 package service;
 import java.util.ArrayList;
 import model.Personagem;
+import enums.Classe;
+import enums.Raca;
+import enums.Level;
+import enums.Atributo;
+import java.util.Scanner;
 
 public class PessoaService {
     private ArrayList<Personagem> personagens = new ArrayList<>();
@@ -24,6 +29,7 @@ public class PessoaService {
             }
         }
     }
+
     public void atualizar(String nome) {
         for (int i = 0; i < personagens.size(); i++) {
 
@@ -35,6 +41,8 @@ public class PessoaService {
             }
         }
     }
+
+
 
     public void deletar (String nome){
 
